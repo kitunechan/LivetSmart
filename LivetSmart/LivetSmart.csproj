@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>net6.0-windows;netcoreapp3.1;net452</TargetFrameworks>
+	  <UseWpf>true</UseWpf>
+	  <LangVersion>latest</LangVersion>
+	  <Nullable>enable</Nullable>
+	  <AssemblyVersion>2.1.*</AssemblyVersion>
+	  <InformationalVersion>2.1</InformationalVersion>
+	  <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+	  <Deterministic>false</Deterministic>
+	  <Company>LivetSmart Project</Company>
+	  <SignAssembly>True</SignAssembly>
+	  <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+	  <PackageTags>MVVM WPF</PackageTags>
+	  <Copyright>Copyright (c) 2015 LivetSmart Project</Copyright>
+	  <PackageProjectUrl>https://github.com/kitunechan/LivetSmart</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/kitunechan/LivetSmart</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+	  <Description>LivetSmart は WPF のための MVVMパターン用インフラストラクチャです。
+Livet を改変して作られています。</Description>
+	  <PackageLicenseFile>LivetSmart.txt</PackageLicenseFile>
+	  <Version>$(InformationalVersion)</Version>
+	  <Authors>kitunechan</Authors>
+	  <NeutralLanguage>ja-JP</NeutralLanguage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="LivetSmart\**" />
+    <EmbeddedResource Remove="LivetSmart\**" />
+    <None Remove="LivetSmart\**" />
+    <Page Remove="LivetSmart\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="Nullable" Version="1.3.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="PolySharp" Version="1.12.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="License\Livet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="License\LivetSmart.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
